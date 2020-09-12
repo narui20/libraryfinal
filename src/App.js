@@ -11,8 +11,8 @@ class App extends Component{
     return(
       <div>
         <div>Hello User. Welcome to react</div>
-        {<SignIn></SignIn>
-        <Login></Login>}
+//         {<SignIn></SignIn>
+//         <Login></Login>}
         <Book></Book>
         <BookDetails></BookDetails>
       </div>
