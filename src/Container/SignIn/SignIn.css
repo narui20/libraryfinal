@@ -1,0 +1,40 @@
+#loginBtn{
+    margin-right:35%;
+}
+@media only screen and (max-width:600px){
+    #loginBtn{
+        margin-right:15%;
+    }
+}
+
+#newStyle{
+    width: 350px;
+	margin-top:auto;
+	margin-bottom: auto;
+	background: mediumpurple;
+	position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    padding-top: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 5px; 
+}
+
+#butstyle{
+    border: none;
+    outline: none;
+    background: whitesmoke;
+    padding: 20px 10px 20px 10px;
+    width: 100%;
+	margin-top:auto;
+	margin-bottom: auto;
+	position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow:  2px 2px 2px #cbced1 inset, -2px -2px 2px #f0f0ee inset;
+   
+}

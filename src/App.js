@@ -1,23 +1,30 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import SignIn from './SignIn/SignIn';
-import Login from './Login/Login';
-import BookDetails from './BookDetails/BookDetails';
-import Book from './Book/Book';
+import SignIn from './Container/SignIn/SignIn';
+import Login from './Container/Login/Login';
+import BookDetails from './Container/BookDetails/BookDetails';
+import Book from './Container/Book/Book';
+import Layout from "./Component/Layout/Layout"
+import { BrowserRouter , Route, Switch} from "react-router-dom";
 
-class App extends Component{
-  render(){
-    return(
-      <div>
-        <div>Hello User. Welcome to react</div>
-//         {<SignIn></SignIn>
-//         <Login></Login>}
-        <Book></Book>
-        <BookDetails></BookDetails>
-      </div>
-    );
-  }
+const App=(props)=>{
+  
+ let routes=(
+    <Switch>
+        <Route path="/signIn" exact component={SignIn} />
+        <Route path="/book" exact component={Book} />
+        <Route path="/bookDetails" exact component={BookDetails} />
+        <Route path="/" exact component={Login} />
+  </Switch>
+ )
+
+  return(
+    <BrowserRouter>
+  <Layout>
+  {routes}
+  </Layout>
+   </BrowserRouter>
+  )
 }
 
 export default App;

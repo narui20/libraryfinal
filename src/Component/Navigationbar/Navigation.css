@@ -1,0 +1,26 @@
+.item{
+    display: inline-flex;
+    margin-left:100px; 
+    font-size: larger;
+    font-weight: bold;
+    color: black;
+}
+
+  
+  #dropdown:hover .dropdown-menu {display: block;}
+  
+  @media only screen and (max-width: 1200px) {
+    .item{
+      margin-left:40px; 
+    }
+  }
+  @media only screen and (max-width: 1048px) {
+    .item{
+      margin-left:20px; 
+    }
+  }
+  @media only screen and (max-width: 900px) {
+    .item{
+      margin-left:auto; 
+    }
+  }
