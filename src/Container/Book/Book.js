@@ -48,7 +48,7 @@ const Book=props=>{
    const getBooksCategory=()=>{
 
      async function fetchData(){
-        let value=await Axios.get("http://localhost:8081/api/bookByCategory/"+category)
+        let value=await Axios.get("http://ec2-52-201-221-249.compute-1.amazonaws.com:8081/api/bookByCategory/"+category)
         updatedBooks(value.data);
         // Axios.get("http://localhost:8081/api/bookByCategory/"+val.category)
         //      .then(res=>{

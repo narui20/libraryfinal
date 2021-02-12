@@ -32,7 +32,7 @@ class Login extends Component{
        }
              if(this.state.value==="user"){
 
-            axios.post("http://localhost:8081/api/getUser/"+val.userName+"/"+val.password)
+            axios.post("http://ec2-52-201-221-249.compute-1.amazonaws.com:8081/api/getUser/"+val.userName+"/"+val.password)
             .then(res=>{
                 if(res.data.userName==null){
                  console.log("Please Enter the correct credentials");

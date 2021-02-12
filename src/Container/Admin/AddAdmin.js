@@ -20,7 +20,7 @@ const AddAdmin=props=>{
 
         async function enterData(){
             if(userName!==''&&password!==''&&email!=="" && mobile!==""){
-          Axios.post("http://localhost:8081/api/admin/",val)
+          Axios.post("http://ec2-52-201-221-249.compute-1.amazonaws.com:8081/api/admin/",val)
           .then(res=>{
               console.log(res.data)
           })
