@@ -13,6 +13,7 @@ class SignIn extends Component{
         email:"",
         mobile:"",
         loading:true,
+        statement:"Please enter all the values"
     }
 
     onButtonClick=event=>{
@@ -28,17 +29,21 @@ class SignIn extends Component{
        axios.post('http://localhost:8081/api/user/',val)
             .then(res=>{
                 if(res.data.userName==null){
-                    console.log("User already exists");
+                    //console.log("User already exists");
+                    this.setState({statement:"User already exists"})
                 }
                 else{
-                    console.log("Hello ",res.data.userName)
+                    //console.log("Hello ",res.data.userName)
+                    //this.setState({statement:"Enjoy the user libraray "+res.data.userName})
+                    this.props.history.push("/")
                 }
                 
             })
 
-        let load=this.state.loading;
-        this.setState({loading:!load});
-        console.log(this.state)
+        this.setState((prevState,props)=>{
+            return {loading:!prevState.loading}
+        })
+       // console.log(this.state)
     }
 
     onChangeHandler=event=>{
@@ -47,8 +52,7 @@ class SignIn extends Component{
        console.log(event.target.value);
     }
     render(){
-       let userDetails=null;
-
+           let userDetails=null;
            if(this.state.loading){
            userDetails=(
             <div className="container">
@@ -65,7 +69,7 @@ class SignIn extends Component{
                          name="password" changed={event=>this.onChangeHandler(event)}/>
                    
                     <FormElmt id="butstyle" proptype="textbox"
-                        label="Password" type="email" req="true"
+                        label="Email" type="email" req="true"
                          name="email" changed={event=>this.onChangeHandler(event)}/>
                     
                     <FormElmt id="butstyle" proptype="textbox"
@@ -80,7 +84,9 @@ class SignIn extends Component{
            );
            }
         return(
-        <div>{userDetails}</div>
+        <div>
+            {userDetails}
+        </div>
         );
     }
 }

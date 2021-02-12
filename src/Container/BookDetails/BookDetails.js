@@ -1,6 +1,7 @@
 import React,{Component} from "react";
 import Axios from "axios";
 import {Button} from "react-bootstrap";
+import "./BookDetails.css"
 
 class BookDetails extends Component{
     state={
@@ -21,11 +22,14 @@ class BookDetails extends Component{
             quantity:this.state.quantity,
         }
 
+        if(this.state.bookName!==""){
+
         Axios.post('http://localhost:8081/api/book/',val)
         .then(res=>{
             console.log(res.data)
         })
-        this.setState({loading:!this.state.loading})
+    }
+        //this.setState({loading:!this.state.loading})
     }
 
     onChangeHandler=event=>{
@@ -37,14 +41,14 @@ class BookDetails extends Component{
 
         if(this.state.loading){
             val=(
-                <div>
+                <div className="book_details">
                   <input type="text" name="bookName" onChange={event=>this.onChangeHandler(event)} placeholder="Enter BookName"></input>
                   <input type="text" name="author" onChange={event=>this.onChangeHandler(event)} placeholder="Enter Author"></input>
                   <input type="text" name="price" onChange={event=>this.onChangeHandler(event)} placeholder="Enter Price"></input>
                   <input type="text" name="category" onChange={event=>this.onChangeHandler(event)} placeholder="Enter Category"></input>
                   <input type="text" name="quantity" onChange={event=>this.onChangeHandler(event)} placeholder="Enter Quantity"></input>
                   <Button onClick={this.onClickHandler}>Add Book</Button>
-
+                  <Button onClick={()=>{this.props.history.goBack()}}>Back</Button>
                 </div>
             )
         }

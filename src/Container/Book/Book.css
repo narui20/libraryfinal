@@ -1,0 +1,8 @@
+.book_item{
+    display: inline;
+    float:left;
+    padding: 10px;
+    border:1px solid black;
+    margin: 20px 30px;
+    background: linear-gradient(to top, green 0%, white 100%);
+}

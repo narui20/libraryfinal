@@ -1,0 +1,10 @@
+.book_details{
+ display: inline-table;
+ box-shadow: black;
+}
+
+.book_details > input{
+    border: none;
+    outline-width: 0;
+    margin-left: 10px;
+}
