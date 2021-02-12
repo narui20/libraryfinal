@@ -26,7 +26,7 @@ class SignIn extends Component{
             mobile:this.state.mobile
         }
         console.log("axios",val)
-       axios.post('http:// ec2-52-91-229-9.compute-1.amazonaws.com:8081/api/user/',val)
+       axios.post('http://ec2-52-91-229-9.compute-1.amazonaws.com:8081/api/user/',val)
             .then(res=>{
                 if(res.data.userName==null){
                     //console.log("User already exists");

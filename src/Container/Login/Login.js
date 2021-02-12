@@ -32,7 +32,7 @@ class Login extends Component{
        }
              if(this.state.value==="user"){
 
-            axios.post("http:// ec2-52-91-229-9.compute-1.amazonaws.com:8081/api/getUser/"+val.userName+"/"+val.password)
+            axios.post("http://ec2-52-91-229-9.compute-1.amazonaws.com:8081/api/getUser/"+val.userName+"/"+val.password)
             .then(res=>{
                 if(res.data.userName==null){
                  console.log("Please Enter the correct credentials");
@@ -55,7 +55,7 @@ class Login extends Component{
             }
 
             else if(this.state.value==="admin"){
-                Axios.post("http:// ec2-52-91-229-9.compute-1.amazonaws.com:8081/api/getAdmin/"+val.userName+"/"+val.password)
+                Axios.post("http://ec2-52-91-229-9.compute-1.amazonaws.com:8081/api/getAdmin/"+val.userName+"/"+val.password)
                 .then(res=>{
                            if(res.data===""){
                                this.props.history.push("/")

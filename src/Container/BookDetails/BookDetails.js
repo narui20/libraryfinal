@@ -24,7 +24,7 @@ class BookDetails extends Component{
 
         if(this.state.bookName!==""){
 
-        Axios.post('http:// ec2-52-91-229-9.compute-1.amazonaws.com:8081/api/book/',val)
+        Axios.post('http://ec2-52-91-229-9.compute-1.amazonaws.com:8081/api/book/',val)
         .then(res=>{
             console.log(res.data)
         })
