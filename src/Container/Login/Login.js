@@ -55,7 +55,7 @@ class Login extends Component{
             }
 
             else if(this.state.value==="admin"){
-                Axios.post("http://localhost:8081/api/getAdmin/"+val.userName+"/"+val.password)
+                Axios.post("http:// ec2-52-91-229-9.compute-1.amazonaws.com:8081/api/getAdmin/"+val.userName+"/"+val.password)
                 .then(res=>{
                            if(res.data===""){
                                this.props.history.push("/")
